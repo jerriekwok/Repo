@@ -12,19 +12,14 @@
 - **版本控制**: Git
 
 ## 部署说明
-
+PS: 由于打包出的文件过大 无法上传 需要自行下载unity部署
 ### 环境要求
 - Unity 2021.3 LTS 或更高版本
 - .NET 6.0 SDK 或更高版本
 - Git
 
-### 安装步骤
+### 安装步骤 
 1. **克隆仓库**
-   ```bash
-   git clone https://github.com/yourusername/kitchen-simulation-game.git
-   cd kitchen-simulation-game
-   ```
-
 2. **打开项目**
    - 启动Unity Hub
    - 点击"Add"按钮，选择项目文件夹
