@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -16,3 +16,4 @@ public class PlayerAnimator : MonoBehaviour
         animator.SetBool(IS_WALKING, playerMove.IsWalking());
     }
 }
+

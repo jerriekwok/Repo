@@ -1,4 +1,4 @@
-using System.Collections;
+锘縰sing System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -13,12 +13,12 @@ public class ClearCounter : BaseCounter
             //There is no kichenObject here
             if (player.HasKitchenObject())
             {
-                //player手上有kitchenObject
+                //player鎵嬩笂鏈塳itchenObject
                 player.GetKitchenObject().SetKitchenObjectParent(this);
             }
             else
             {
-                //player手中无kitchenObject
+                //player鎵嬩腑鏃爇itchenObject
             }
         }
         else
@@ -26,10 +26,10 @@ public class ClearCounter : BaseCounter
             //There is a kichenObject here
             if (player.HasKitchenObject())
             {
-                //player手中有kitchenObject
+                //player鎵嬩腑鏈塳itchenObject
                 if (player.GetKitchenObject().TryGetPlate(out PlateKitchenObject plateKitchenObject))
                 {
-                    //检测player手中物品是否为plate
+                    //妫�娴媝layer鎵嬩腑鐗╁搧鏄惁涓簆late
                     //plateKitchenObject = player.GetKitchenObject() as PlateKitchenObject;
                     if (plateKitchenObject.TryAddIngredient(GetKitchenObject().GetKitchenObjectSO()))
                     {
@@ -38,7 +38,7 @@ public class ClearCounter : BaseCounter
                 }
                 else
                 {
-                    //player手中没有物品,判断桌台的物品是否为plate
+                    //player鎵嬩腑娌℃湁鐗╁搧,鍒ゆ柇妗屽彴鐨勭墿鍝佹槸鍚︿负plate
                     if (GetKitchenObject().TryGetPlate(out  plateKitchenObject))
                     {
                         //counter is holding a plate
@@ -52,7 +52,7 @@ public class ClearCounter : BaseCounter
             }
             else
             {
-                //player手中无kitchenObject
+                //player鎵嬩腑鏃爇itchenObject
                 this.GetKitchenObject().SetKitchenObjectParent(player);
             }
         }
@@ -62,3 +62,4 @@ public class ClearCounter : BaseCounter
         
 
         
+

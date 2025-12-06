@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
@@ -13,7 +13,7 @@ public class GameOverUI : MonoBehaviour
     private void Awake()
     {
 
-        //°´Å¥¼àÌı
+        //æŒ‰é’®ç›‘å¬
         mainMenuButton.onClick.AddListener(() =>
         {
             Loader.Load(Loader.Scene.MainMenuScene);
@@ -32,12 +32,12 @@ public class GameOverUI : MonoBehaviour
 
     private void Start()
     {
-        //×¢²áÓÎÏ·×´Ì¬±ä»¯Ê±¼ä
+        //æ³¨å†Œæ¸¸æˆçŠ¶æ€å˜åŒ–æ—¶é—´
         KitchenGameManager.Instance.OnStateChanged += KitchenGameManager_OnStateChanged;
 
         
 
-        //³õÊ¼»¯Òş²Ø
+        //åˆå§‹åŒ–éšè—
         Hide();
     }
 
@@ -47,7 +47,7 @@ public class GameOverUI : MonoBehaviour
         {
             Show();
 
-            //±£´æ·ÖÊı
+            //ä¿å­˜åˆ†æ•°
             int score = DeliveryManager.Instance.GetSuccessfulRecipesAmount();
             LeaderboardManager.AddScore(score);
 
@@ -75,3 +75,4 @@ public class GameOverUI : MonoBehaviour
        
     }
 }
+

@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
@@ -7,11 +7,11 @@ public class CuttingCounter : BaseCounter,IHasProgress
 {
     public event EventHandler<IHasProgress.OnProgressChangedEventArgs> OnProgressChanged;
 
-    public static event EventHandler OnAnyCut;//¾²Ì¬ÊÂ¼ş ÓÃÓÚ²¥·ÅÒôĞ§
-    public event EventHandler OnCut;//ÇĞ²ËÊÂ¼ş ÓÃÓÚ¶¯»­²¥·Å
+    public static event EventHandler OnAnyCut;//é™æ€äº‹ä»¶ ç”¨äºæ’­æ”¾éŸ³æ•ˆ
+    public event EventHandler OnCut;//åˆ‡èœäº‹ä»¶ ç”¨äºåŠ¨ç”»æ’­æ”¾
 
     [SerializeField] private CuttingRecipeSO[] cuttingRecipeSOArray;
-    private int cuttingProgress;//ÇĞ²Ë¼ÆÊıÆ÷
+    private int cuttingProgress;//åˆ‡èœè®¡æ•°å™¨
 
 
     new public static void ResetStaticData()
@@ -26,10 +26,10 @@ public class CuttingCounter : BaseCounter,IHasProgress
             //There is no kichenObject here
             if (player.HasKitchenObject())
             {
-                //ÅĞ¶ÏÍæ¼ÒÊÖÖĞµÄkitchenobjectÄÜ²»ÄÜÇĞ
+                //åˆ¤æ–­ç©å®¶æ‰‹ä¸­çš„kitchenobjectèƒ½ä¸èƒ½åˆ‡
                 if (HasRecipeWithInput(player.GetKitchenObject().GetKitchenObjectSO()))
                 {
-                    //playerÊÖÉÏÓĞkitchenObject
+                    //playeræ‰‹ä¸Šæœ‰kitchenObject
                     player.GetKitchenObject().SetKitchenObjectParent(this);
                     cuttingProgress = 0;
 
@@ -43,7 +43,7 @@ public class CuttingCounter : BaseCounter,IHasProgress
             }
             else
             {
-                //playerÊÖÖĞÎŞkitchenObject
+                //playeræ‰‹ä¸­æ— kitchenObject
             }
         }
         else
@@ -51,10 +51,10 @@ public class CuttingCounter : BaseCounter,IHasProgress
             //There is a kichenObject here
             if (player.HasKitchenObject())
             {
-                //playerÊÖÖĞÓĞkitchenObject
+                //playeræ‰‹ä¸­æœ‰kitchenObject
                 if (player.GetKitchenObject().TryGetPlate(out PlateKitchenObject plateKitchenObject))
                 {
-                    //¼ì²âplayerÊÖÖĞÎïÆ·ÊÇ·ñÎªplate
+                    //æ£€æµ‹playeræ‰‹ä¸­ç‰©å“æ˜¯å¦ä¸ºplate
                     plateKitchenObject = player.GetKitchenObject() as PlateKitchenObject;
                     if (plateKitchenObject.TryAddIngredient(GetKitchenObject().GetKitchenObjectSO()))
                     {
@@ -64,7 +64,7 @@ public class CuttingCounter : BaseCounter,IHasProgress
             }
             else
             {
-                //playerÊÖÖĞÎŞkitchenObject
+                //playeræ‰‹ä¸­æ— kitchenObject
                 this.GetKitchenObject().SetKitchenObjectParent(player);
             }
         }
@@ -87,8 +87,8 @@ public class CuttingCounter : BaseCounter,IHasProgress
             if (cuttingProgress >=  cuttingRecipeSO.CuttingProgressMax)
             {
                 KitchenObjectSO outputKitchenObjectSO = GetOutputForInput(GetKitchenObject().GetKitchenObjectSO());
-                GetKitchenObject().DestroySelf();//Ïú»Ù
-                KitchenObject.SpawnKitchenObject(outputKitchenObjectSO, this);//Éú³É
+                GetKitchenObject().DestroySelf();//é”€æ¯
+                KitchenObject.SpawnKitchenObject(outputKitchenObjectSO, this);//ç”Ÿæˆ
             }
            
           
@@ -96,14 +96,14 @@ public class CuttingCounter : BaseCounter,IHasProgress
         
     }
 
-    //ÅĞ¶ÏÊÇ·ñ´æÔÚ¿É·ÅÉÏcuttingcounter½øĞĞF¶¯×÷µÄÎïÆ·
+    //åˆ¤æ–­æ˜¯å¦å­˜åœ¨å¯æ”¾ä¸Šcuttingcounterè¿›è¡ŒFåŠ¨ä½œçš„ç‰©å“
     private bool HasRecipeWithInput(KitchenObjectSO kitchenObjectSO)
     {
         CuttingRecipeSO cuttingRecipeSO = GetCuttingRecipeSOWithInput(kitchenObjectSO);
         return cuttingRecipeSO != null;
     }
 
-    //´Ó¶ÔÓ¦µÄinputµÄkitchenObjectSO µÃµ½outputµÄkichenObjectSO
+    //ä»å¯¹åº”çš„inputçš„kitchenObjectSO å¾—åˆ°outputçš„kichenObjectSO
     private KitchenObjectSO GetOutputForInput(KitchenObjectSO kitchenObjectSO)
     {
         CuttingRecipeSO cuttingRecipeSO = GetCuttingRecipeSOWithInput(kitchenObjectSO);
@@ -126,3 +126,4 @@ public class CuttingCounter : BaseCounter,IHasProgress
         return null;
     }
 }
+

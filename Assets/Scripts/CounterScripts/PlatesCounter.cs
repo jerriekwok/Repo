@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
@@ -7,13 +7,13 @@ public class PlatesCounter : BaseCounter
 {
     [SerializeField] private KitchenObjectSO plateKitchenObjectSO;
 
-    public event EventHandler OnPlateSpawned;//Éú³ÉÅÌ×ÓµÄÊÂ¼ş
-    public event EventHandler OnPlateRemove;//È¡×ßÅÌ×Ó
+    public event EventHandler OnPlateSpawned;//ç”Ÿæˆç›˜å­çš„äº‹ä»¶
+    public event EventHandler OnPlateRemove;//å–èµ°ç›˜å­
 
     private float spawnPlateTimer;
     private float spawnPlateTimerMax = 4f;
-    private int platesSpawnedAmount;//ÅÌ×ÓÉú³ÉµÄÊıÁ¿
-    private int platesSpawnedAmountMax = 4;//×î´óÊıÁ¿
+    private int platesSpawnedAmount;//ç›˜å­ç”Ÿæˆçš„æ•°é‡
+    private int platesSpawnedAmountMax = 4;//æœ€å¤§æ•°é‡
 
     private void Update()
     {
@@ -46,3 +46,4 @@ public class PlatesCounter : BaseCounter
         }
     }
 }
+

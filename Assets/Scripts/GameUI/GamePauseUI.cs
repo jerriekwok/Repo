@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -48,7 +48,7 @@ public class GamePauseUI : MonoBehaviour
     {
         gameObject.SetActive(true);
 
-        resumeButton.Select();//���ڱ�ѡ��״̬
+        resumeButton.Select();//处于被选中状态
     }
 
     private void Hide()
@@ -57,3 +57,4 @@ public class GamePauseUI : MonoBehaviour
     }
 
 }
+

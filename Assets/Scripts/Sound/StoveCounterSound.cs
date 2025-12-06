@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -51,7 +51,7 @@ public class StoveCounterSound : MonoBehaviour
                 float warningSoundTimerMax = .2f;
                 warningSoundTimer = warningSoundTimerMax;
 
-                //²¥·Å¾¯±¨Òô
+                //æ’­æ”¾è­¦æŠ¥éŸ³
                 SoundManager.Instance.PlayWarningSound(stoveCounter.transform.position);
             }
         }
@@ -68,3 +68,4 @@ public class StoveCounterSound : MonoBehaviour
     }
 
 }
+

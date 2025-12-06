@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,7 +8,7 @@ public class SelectedCounterVisual : MonoBehaviour
     [SerializeField] private BaseCounter baseCounter;
     private void Start()
     {
-        Player.Instance.OnSelectedCounterChanged += Player_OnSelectedCounterChanged;//¶©ÔÄ¹ñÌ¨Ñ¡ÖĞµÄÊÂ¼ş
+        Player.Instance.OnSelectedCounterChanged += Player_OnSelectedCounterChanged;//è®¢é˜…æŸœå°é€‰ä¸­çš„äº‹ä»¶
     }
 
     private void Player_OnSelectedCounterChanged(object sender, Player.OnSelectedCounterChangedEventArgs e)
@@ -40,3 +40,4 @@ public class SelectedCounterVisual : MonoBehaviour
 
    
     
+

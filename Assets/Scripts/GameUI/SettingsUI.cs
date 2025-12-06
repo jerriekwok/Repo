@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -87,7 +87,7 @@ public class SettingsUI : MonoBehaviour
         musicSlider.value = MusicManager.Instance.GetVolume();
         effectSlider.value = SoundManager.Instance.GetVolume();
 
-        //×¢²á¼àÌı
+        //æ³¨å†Œç›‘å¬
         musicSlider.onValueChanged.AddListener((value) =>
         {
             MusicManager.Instance.SetVolume(value);
@@ -99,7 +99,7 @@ public class SettingsUI : MonoBehaviour
         });
         
 
-        KitchenGameManager.Instance.OnGameUnpaused += KitchenGameManager_OnGameUnpaused;//Ë«ÖØ±£ÏÕÈ·±£¸ÃÃæ°åµÄ¹Ø±Õ
+        KitchenGameManager.Instance.OnGameUnpaused += KitchenGameManager_OnGameUnpaused;//åŒé‡ä¿é™©ç¡®ä¿è¯¥é¢æ¿çš„å…³é—­
         UpdateVisual();
         HidePresstoRebindKeyTransform();
         Hide();
@@ -107,18 +107,18 @@ public class SettingsUI : MonoBehaviour
 
     void Update()
     {
-        //Çå¿ÕËùÓĞ±¾µØÉèÖÃ  ÓÃÓÚµ÷ÊÔ
+        //æ¸…ç©ºæ‰€æœ‰æœ¬åœ°è®¾ç½®  ç”¨äºè°ƒè¯•
         if (Input.GetKeyDown(KeyCode.R))
         {
             PlayerPrefs.DeleteAll();
             PlayerPrefs.Save();
-            Debug.Log("PlayerPrefs ÒÑÖØÖÃ");
+            Debug.Log("PlayerPrefs å·²é‡ç½®");
         }
     }
 
     public void UpdateVisual()
     {
-        //textÎÄ±¾µÄ°´¼üÓ³Éä
+        //textæ–‡æœ¬çš„æŒ‰é”®æ˜ å°„
         moveUpText.text = GameInput.Instance.GetBindingText(GameInput.Binding.Move_Up);
         moveDownText.text = GameInput.Instance.GetBindingText(GameInput.Binding.Move_Down);
         moveLeftText.text = GameInput.Instance.GetBindingText(GameInput.Binding.Move_Left);
@@ -179,3 +179,4 @@ public class SettingsUI : MonoBehaviour
 
 
 }
+

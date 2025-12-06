@@ -1,4 +1,4 @@
-using System;
+Ôªøusing System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,7 +16,7 @@ public class ContainerCounter : BaseCounter
                 Debug.Log("Interaction!");
 
             KitchenObject.SpawnKitchenObject(kitchenObjectSO,player);
-                //¥•∑¢ ¬º˛
+                //Ëß¶Âèë‰∫ã‰ª∂
                 OnPlayerGrabbedObject?.Invoke(this, EventArgs.Empty);
         }
         
@@ -24,3 +24,4 @@ public class ContainerCounter : BaseCounter
     }
   
 }
+

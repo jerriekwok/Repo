@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,11 +6,11 @@ using UnityEngine;
 public class PlateIconUI : MonoBehaviour
 {
     [SerializeField] private PlateKitchenObject plateKitchenObject;
-    [SerializeField] private Transform iconTemplate;//iconÄ£°å
+    [SerializeField] private Transform iconTemplate;//iconæ¨¡æ¿
 
     private void Awake()
     {
-        //Ä£°åÖ»ÓÃÀ´Éú³É²»ÓÃÏÔÊ¾
+        //æ¨¡æ¿åªç”¨æ¥ç”Ÿæˆä¸ç”¨æ˜¾ç¤º
         iconTemplate.gameObject.SetActive(false);
     }
     private void Start()
@@ -25,10 +25,10 @@ public class PlateIconUI : MonoBehaviour
 
     private void UpdateVisual()
     {
-        //·ÀÖ¹ÖØ¸´Éú³É
+        //é˜²æ­¢é‡å¤ç”Ÿæˆ
         foreach (Transform child in transform)
         {
-            //±ÜÃâÉ¾³ıiconTemplateÄ£°å
+            //é¿å…åˆ é™¤iconTemplateæ¨¡æ¿
             if (child == iconTemplate)
             {
                 continue;
@@ -44,3 +44,4 @@ public class PlateIconUI : MonoBehaviour
         }
     }
 }
+

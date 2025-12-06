@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -14,7 +14,7 @@ public class DeliveryResultUI : MonoBehaviour
     [SerializeField] private Sprite successSprite;
     [SerializeField] private Sprite failedSprite;
 
-    private const string POPUP = "Popup";//¶¯»­Æ¬¶ÎµÄ±êÊ¶
+    private const string POPUP = "Popup";//åŠ¨ç”»ç‰‡æ®µçš„æ ‡è¯†
     private Animator animator;
 
     private void Awake()
@@ -32,7 +32,7 @@ public class DeliveryResultUI : MonoBehaviour
     private void DeliveryManager_OnRecipeFailed(object sender, System.EventArgs e)
     {
         gameObject.SetActive(true);
-        animator.SetTrigger(POPUP);//²¥·Å¶¯»­
+        animator.SetTrigger(POPUP);//æ’­æ”¾åŠ¨ç”»
 
         backgroundImage.color = failedColor;
         iconImage.sprite = failedSprite;
@@ -49,3 +49,4 @@ public class DeliveryResultUI : MonoBehaviour
         messageText.text = "DELIVERY\nSUCCESS";
     }
 }
+

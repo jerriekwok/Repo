@@ -1,18 +1,18 @@
-using System.Collections;
+锘縰sing System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
 
 public class TrashCounter : BaseCounter
 {
-    public static event EventHandler OnAnyObjectTrashed;//音效事件
+    public static event EventHandler OnAnyObjectTrashed;//闊虫晥浜嬩欢
 
     new public static void ResetStaticData()
     {
          OnAnyObjectTrashed = null;
     }
 
-    //主交互时删除玩家手中的kitchenobject
+    //涓讳氦浜掓椂鍒犻櫎鐜╁鎵嬩腑鐨刱itchenobject
     public override void Interact(Player player)
     {
         if (player.HasKitchenObject())
@@ -23,3 +23,4 @@ public class TrashCounter : BaseCounter
         }
     }
 }
+

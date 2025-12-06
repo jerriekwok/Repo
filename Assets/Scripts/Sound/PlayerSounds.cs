@@ -1,11 +1,11 @@
-using System.Collections;
+锘縰sing System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerSounds : MonoBehaviour
 {
     private Player player;
-    private float footstepTimer;//脚步的节奏控制器
+    private float footstepTimer;//鑴氭鐨勮妭濂忔帶鍒跺櫒
     private float footstepTimerMax = .1f;
 
     private void Awake()
@@ -28,3 +28,4 @@ public class PlayerSounds : MonoBehaviour
         }
     }
 }
+

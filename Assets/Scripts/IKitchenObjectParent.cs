@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,9 +7,10 @@ public interface IKitchenObjectParent
     public Transform GetKitchenObjectFollowTransfrom();
     public void SetKitchenObject(KitchenObject kitchenObject);
     public KitchenObject GetKitchenObject();
-    public void ClearKitchenObject();//Çå³ıÎïÆ·
-    public bool HasKitchenObject();//¼ì²âÊÇ·ñ´æÔÚÎïÆ·
+    public void ClearKitchenObject();//æ¸…é™¤ç‰©å“
+    public bool HasKitchenObject();//æ£€æµ‹æ˜¯å¦å­˜åœ¨ç‰©å“
 }
+
 
 
 

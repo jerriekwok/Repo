@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -14,7 +14,7 @@ public class ProgressBarUI : MonoBehaviour
         hasProgress = HasProgressGameObject.GetComponent<IHasProgress>();
         if (hasProgress == null)
         {
-            Debug.LogError("hasprogressÃ»ÓĞÈ¡µÃ½Ó¿Ú");
+            Debug.LogError("hasprogressæ²¡æœ‰å–å¾—æ¥å£");
         } 
         hasProgress.OnProgressChanged += HasProgress_OnProgressChanged;
         barImage.fillAmount = 0f;
@@ -24,10 +24,10 @@ public class ProgressBarUI : MonoBehaviour
 
     private void HasProgress_OnProgressChanged(object sender, IHasProgress.OnProgressChangedEventArgs e)
     {
-        //Debug.Log("ÊÕµ½½ø¶ÈÊÂ¼ş£¬½ø¶È£º" + e.progressNormalized);
+        //Debug.Log("æ”¶åˆ°è¿›åº¦äº‹ä»¶ï¼Œè¿›åº¦ï¼š" + e.progressNormalized);
         barImage.fillAmount = e.progressNormalized;
 
-        //Òş²ØºÍÏÔÊ¾½ø¶ÈÌõµÄ»úÖÆ
+        //éšè—å’Œæ˜¾ç¤ºè¿›åº¦æ¡çš„æœºåˆ¶
         if (e.progressNormalized == 0f || e.progressNormalized == 1f)
         {
             Hide();
@@ -47,3 +47,4 @@ public class ProgressBarUI : MonoBehaviour
         gameObject.SetActive(true);
     }
 }
+

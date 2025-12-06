@@ -1,4 +1,4 @@
-using System.Collections;
+锘縰sing System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -16,7 +16,7 @@ public class StoveWarningUI : MonoBehaviour
     private void StoveCounter_OnProgressChanged(object sender, IHasProgress.OnProgressChangedEventArgs e)
     {
         float burnShowProgressAmount = .5f;
-        //进度条到第二阶段的一半时显示
+        //杩涘害鏉″埌绗簩闃舵鐨勪竴鍗婃椂鏄剧ず
         bool show = stoveCounter.isFried() && e.progressNormalized >= burnShowProgressAmount;
         if (show)
         {
@@ -39,3 +39,4 @@ public class StoveWarningUI : MonoBehaviour
         gameObject.SetActive(false);
     }
 }
+

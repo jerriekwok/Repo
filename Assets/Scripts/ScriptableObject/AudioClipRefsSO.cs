@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -15,3 +15,4 @@ public class AudioClipRefsSO : ScriptableObject
     public AudioClip[] trash;
     public AudioClip[] warning;
 }
+

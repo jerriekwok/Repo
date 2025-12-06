@@ -1,10 +1,10 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 /// <summary>
-/// ʱ�ӵ���ʱUI
+/// 时钟倒计时UI
 /// </summary>
 public class GamePlayingClockUI : MonoBehaviour
 {
@@ -15,3 +15,4 @@ public class GamePlayingClockUI : MonoBehaviour
         timerImage.fillAmount = KitchenGameManager.Instance.GetGamePlayingTimerNormalized();
     }
 }
+

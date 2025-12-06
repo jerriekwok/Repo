@@ -1,10 +1,10 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
 
 
-[Serializable]//¿ÉĞòÁĞ»¯
+[Serializable]//å¯åºåˆ—åŒ–
 public class ScoreEntry
 {
     public int score;
@@ -15,3 +15,4 @@ public class LeaderboardData
 {
     public List<ScoreEntry> scores = new List<ScoreEntry>();
 }
+

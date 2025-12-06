@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -13,9 +13,9 @@ public class KitchenObject : MonoBehaviour
     }
     public void SetKitchenObjectParent(IKitchenObjectParent kitchenObjectParent)
     {
-        if (this.kitchenObjectParent != null)//ÅĞ¶Ïµ±Ç°ÊÇ·ñÒÑÓĞ°óµÄ¹ñÌ¨
+        if (this.kitchenObjectParent != null)//åˆ¤æ–­å½“å‰æ˜¯å¦å·²æœ‰ç»‘çš„æŸœå°
         {
-            this.kitchenObjectParent.ClearKitchenObject();//½â°ó
+            this.kitchenObjectParent.ClearKitchenObject();//è§£ç»‘
         }
         this.kitchenObjectParent = kitchenObjectParent;
 
@@ -43,20 +43,20 @@ public class KitchenObject : MonoBehaviour
     {
         if (this is PlateKitchenObject)
         {
-            Debug.Log("³É¹¦Ê¶±ğÎª²ÍÅÌ: " + this.name);
+            Debug.Log("æˆåŠŸè¯†åˆ«ä¸ºé¤ç›˜: " + this.name);
             plateKitchenObject = this as PlateKitchenObject;
             return true;
         }
         else
         {
-            Debug.Log("²»ÊÇ²ÍÅÌ£¬¶øÊÇ: " + this.name);
+            Debug.Log("ä¸æ˜¯é¤ç›˜ï¼Œè€Œæ˜¯: " + this.name);
             plateKitchenObject = null;
             return false;
         }
     }
 
     /// <summary>
-    /// Éú³É³ø·¿ÎïÆ·
+    /// ç”Ÿæˆå¨æˆ¿ç‰©å“
     /// </summary>
     /// <param name="kitchenObjectSO"></param>
     /// <param name="kitchenObjectParent"></param>
@@ -73,3 +73,4 @@ public class KitchenObject : MonoBehaviour
 }
 
         
+

@@ -1,10 +1,10 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
 
 /// <summary>
-/// ÓÎÏ·µÄ×´Ì¬ÇĞ»»
+/// æ¸¸æˆçš„çŠ¶æ€åˆ‡æ¢
 /// </summary>
 public class KitchenGameManager : MonoBehaviour
 {
@@ -26,13 +26,13 @@ public class KitchenGameManager : MonoBehaviour
     
     private float countdownToStartTimer = 3f;
     private float gamePlayingTimer;
-    private float gamePlayingTimerMax = 30f;//ÓÎÏ·Ê±³¤
+    private float gamePlayingTimerMax = 30f;//æ¸¸æˆæ—¶é•¿
     private bool isGamePaused = false;
 
     private void Awake()
     {
         Instance = this;
-        state = State.WaitingToStart;//³õÊ¼×´Ì¬
+        state = State.WaitingToStart;//åˆå§‹çŠ¶æ€
     }
 
     private void Start()
@@ -84,13 +84,13 @@ public class KitchenGameManager : MonoBehaviour
         }
     }
 
-    //ÅĞ¶ÏÊÇ·ñ»¹ÔÚÓÎÏ·×´Ì¬
+    //åˆ¤æ–­æ˜¯å¦è¿˜åœ¨æ¸¸æˆçŠ¶æ€
     public bool IsGamePlaying()
     {
         return state == State.GamePlaying;
     }
 
-    //ÅĞ¶ÏÊÇ·ñ½øÈë¿ªÊ¼µ¹¼ÆÊ±
+    //åˆ¤æ–­æ˜¯å¦è¿›å…¥å¼€å§‹å€’è®¡æ—¶
     public bool IsCountdownToStartActive()
     {
         return state == State.CountdownToStart;
@@ -129,3 +129,4 @@ public class KitchenGameManager : MonoBehaviour
 
  
 }
+

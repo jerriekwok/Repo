@@ -1,4 +1,4 @@
-using System.Collections;
+锘縰sing System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
@@ -13,13 +13,13 @@ public class PlateCompleteVisual : MonoBehaviour
     }
 
     [SerializeField] private PlateKitchenObject plateKitchenObject;
-    //餐盘中显示物品的列表
+    //椁愮洏涓樉绀虹墿鍝佺殑鍒楄〃
     [SerializeField] private List<KitchenObjectSO_GameObject> kitchenObjectSOGameObjectList;
 
     private void Start()
     {
         plateKitchenObject.OnIngredientAdded += PlateKitchenObject_OnIngredientAdded;
-        //开始时失活餐盘中的物品
+        //寮�濮嬫椂澶辨椿椁愮洏涓殑鐗╁搧
         foreach (KitchenObjectSO_GameObject kitchenObjectSOGameObject in kitchenObjectSOGameObjectList)
         {
             kitchenObjectSOGameObject.gameObject.SetActive(false);
@@ -37,3 +37,4 @@ public class PlateCompleteVisual : MonoBehaviour
         }
     }
 }
+

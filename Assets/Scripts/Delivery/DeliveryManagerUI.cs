@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -13,7 +13,7 @@ public class DeliveryManagerUI : MonoBehaviour
     }
     private void Start()
     {
-        //¶©ÔÄÊÂ¼þ
+        //è®¢é˜…äº‹ä»¶
         DeliveryManager.Instance.OnRecipeSpawned += DeliveryManager_OnRecipeSpawned;
         DeliveryManager.Instance.OnRecipeComplate += DeliveryManager_OnRecipeComplate;
         UpdateVisual();
@@ -49,3 +49,4 @@ public class DeliveryManagerUI : MonoBehaviour
         }
     }
 }
+

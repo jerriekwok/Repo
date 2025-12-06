@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -14,14 +14,14 @@ public class DeliveryCounter : BaseCounter
         if (player.HasKitchenObject())
         {
 
-            //Debug.Log("µ±Ç°ÄÃ×ÅµÄÎïÌå: " + player.GetKitchenObject().GetKitchenObjectSO().name);
+            //Debug.Log("å½“å‰æ‹¿ç€çš„ç‰©ä½“: " + player.GetKitchenObject().GetKitchenObjectSO().name);
 
             if (player.GetKitchenObject().TryGetPlate(out PlateKitchenObject plateKitchenObject))
             {
-                //Debug.Log("plateKitchenObject ÊÇ·ñÎª null£¿" + (plateKitchenObject == null));
+                //Debug.Log("plateKitchenObject æ˜¯å¦ä¸º nullï¼Ÿ" + (plateKitchenObject == null));
 
 
-                //ºÍDliveryManager½øĞĞ²Ëµ¥Æ¥Åä
+                //å’ŒDliveryManagerè¿›è¡Œèœå•åŒ¹é…
                 DeliveryManager.Instance.DeliverRecipe(plateKitchenObject);
                 player.GetKitchenObject().DestroySelf();
                
@@ -29,3 +29,4 @@ public class DeliveryCounter : BaseCounter
         }
     }
 }
+

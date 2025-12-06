@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
@@ -7,8 +7,8 @@ using UnityEngine.UI;
 public class BlindText : MonoBehaviour
 {
    
-    public Text text; // °ó¶¨ÄãµÄTMPÎÄ±¾×é¼ş
-    public float blinkSpeed = 1f; // ÉÁË¸ËÙ¶È£¬Ô½´óÔ½¿ì
+    public Text text; // ç»‘å®šä½ çš„TMPæ–‡æœ¬ç»„ä»¶
+    public float blinkSpeed = 1f; // é—ªçƒé€Ÿåº¦ï¼Œè¶Šå¤§è¶Šå¿«
     private Coroutine blinkCoroutine;
 
     private void Awake()
@@ -33,7 +33,7 @@ public class BlindText : MonoBehaviour
         while (true)
         {
 
-            // ÀûÓÃPingPongÈÃalphaÔÚ0~1Ö®¼äÍù¸´±ä»¯
+            // åˆ©ç”¨PingPongè®©alphaåœ¨0~1ä¹‹é—´å¾€å¤å˜åŒ–
             float alpha = Mathf.PingPong(Time.time * blinkSpeed, 1f);
             
             color.a = alpha;
@@ -44,3 +44,4 @@ public class BlindText : MonoBehaviour
     }
 
 }
+

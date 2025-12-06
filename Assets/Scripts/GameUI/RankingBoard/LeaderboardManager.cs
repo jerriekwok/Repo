@@ -1,13 +1,13 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-//Êı¾İ¹ÜÀí¸¨ÖúÀà
+//æ•°æ®ç®¡ç†è¾…åŠ©ç±»
 public static class LeaderboardManager
 {
     private const string LEADBOARD_KEY = "LeaderboardData";
 
-    //´æ´¢Êı¾İ
+    //å­˜å‚¨æ•°æ®
     public static void SaveLeaderboard(LeaderboardData data)
     {
         string json = JsonUtility.ToJson(data);
@@ -15,13 +15,13 @@ public static class LeaderboardManager
         PlayerPrefs.Save();
     }
 
-    //¼ÓÔØÊı¾İ
+    //åŠ è½½æ•°æ®
     public static LeaderboardData LoadLeaderboard()
     {
         if (PlayerPrefs.HasKey(LEADBOARD_KEY))
         {
             string json = PlayerPrefs.GetString(LEADBOARD_KEY,"");
-            //½âÎöjson
+            //è§£æjson
             return JsonUtility.FromJson<LeaderboardData>(json);
 
         }
@@ -36,10 +36,10 @@ public static class LeaderboardManager
             score = score 
         });
 
-        //´Ó¸ßµ½µÍÅÅĞò
+        //ä»é«˜åˆ°ä½æ’åº
         data.scores.Sort((a, b) => b.score.CompareTo(a.score));
 
-        //ÏŞÖÆ×î´óÊıÁ¿
+        //é™åˆ¶æœ€å¤§æ•°é‡
         if (data.scores.Count > 10)
         {
             data.scores.RemoveRange(10, data.scores.Count - 10);
@@ -47,6 +47,7 @@ public static class LeaderboardManager
 
         SaveLeaderboard(data);
 
-        Debug.Log($"ÒÑ±£´æ·ÖÊı:{score}");
+        Debug.Log($"å·²ä¿å­˜åˆ†æ•°:{score}");
     }
 }
+

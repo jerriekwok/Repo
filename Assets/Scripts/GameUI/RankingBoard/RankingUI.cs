@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
@@ -24,7 +24,7 @@ public class RankingUI : MonoBehaviour
             Hide();
         });
 
-        //³õÊ¼»¯Ãæ°åÓëÄ£°åTemplateÒş²Ø
+        //åˆå§‹åŒ–é¢æ¿ä¸æ¨¡æ¿Templateéšè—
         Hide();
         highscoreEntryTemplate.gameObject.SetActive(false);
 
@@ -42,15 +42,15 @@ public class RankingUI : MonoBehaviour
         {
             if (child != highscoreEntryTemplate)
             {
-                Destroy(child.gameObject);//ÏÈÇå¿Õ¾ÉµÄÌõÄ¿
+                Destroy(child.gameObject);//å…ˆæ¸…ç©ºæ—§çš„æ¡ç›®
             }
         }
 
-        //¶ÁÈ¡ÅÅĞĞ°ñÊı¾İ
+        //è¯»å–æ’è¡Œæ¦œæ•°æ®
         LeaderboardData data = LeaderboardManager.LoadLeaderboard();
 
         int displayCount = Mathf.Min(data.scores.Count, MaxEntries);
-        //Éú³ÉÅÅĞĞ°ñÊı¾İ
+        //ç”Ÿæˆæ’è¡Œæ¦œæ•°æ®
         for (int i = 0; i < displayCount; i++)
         {
             ScoreEntry entry = data.scores[i];
@@ -64,8 +64,8 @@ public class RankingUI : MonoBehaviour
             scoreText.text = entry.score.ToString();
         }
 
-        Debug.Log($"µ±Ç°ÅÅĞĞ°ñ¹² {data.scores.Count} Ìõ");
-        Debug.Log($"µÚÒ»Ãû·ÖÊı£º{data.scores[0].score}");
+        Debug.Log($"å½“å‰æ’è¡Œæ¦œå…± {data.scores.Count} æ¡");
+        Debug.Log($"ç¬¬ä¸€ååˆ†æ•°ï¼š{data.scores[0].score}");
 
     }
     private string GetRankString(int rank)
@@ -90,3 +90,4 @@ public class RankingUI : MonoBehaviour
     }
    
 }
+

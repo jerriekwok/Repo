@@ -1,13 +1,13 @@
-using System;
+ï»¿using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class BaseCounter : MonoBehaviour,IKitchenObjectParent
 {
-    public static event EventHandler OnAnyObjectPlacedHere;//¾²Ì¬ÊÂ¼ş ÓÃÓÚÒôĞ§ 
+    public static event EventHandler OnAnyObjectPlacedHere;//é™æ€äº‹ä»¶ ç”¨äºéŸ³æ•ˆ 
 
-    [SerializeField] private Transform counterTopPoint;//ÎïÆ·Éú³ÉµÄµãÎ»
+    [SerializeField] private Transform counterTopPoint;//ç‰©å“ç”Ÿæˆçš„ç‚¹ä½
 
     private KitchenObject kitchenObject;
 
@@ -41,12 +41,13 @@ public class BaseCounter : MonoBehaviour,IKitchenObjectParent
     {
         return kitchenObject;
     }
-    public void ClearKitchenObject()//Çå³ıÎïÆ·
+    public void ClearKitchenObject()//æ¸…é™¤ç‰©å“
     {
         kitchenObject = null;
     }
-    public bool HasKitchenObject()//¼ì²âÊÇ·ñ´æÔÚÎïÆ·
+    public bool HasKitchenObject()//æ£€æµ‹æ˜¯å¦å­˜åœ¨ç‰©å“
     {
         return kitchenObject != null;
     }
 }
+

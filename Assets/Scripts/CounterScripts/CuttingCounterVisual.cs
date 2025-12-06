@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -22,3 +22,4 @@ public class CuttingCounterVisual : MonoBehaviour
         animator.SetTrigger(ON_CUT);
     }
 }
+

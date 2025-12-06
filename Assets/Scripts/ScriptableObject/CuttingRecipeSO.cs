@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,3 +9,4 @@ public class CuttingRecipeSO : ScriptableObject
     [field:SerializeField]public KitchenObjectSO Output { get; private set; }
     public int CuttingProgressMax;
 }
+

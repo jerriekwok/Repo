@@ -1,28 +1,28 @@
-using System;
+ï»¿using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// ËÍ²Í¹ÜÀíÆ÷
+/// é€é¤ç®¡ç†å™¨
 /// </summary>
 public class DeliveryManager : MonoBehaviour
 {
-    //ÉùÃ÷ÊÂ¼ş
-    public event EventHandler OnRecipeSpawned;//²ËÆ·Éú³É
-    public event EventHandler OnRecipeComplate;//´«²ËÍê³É
-    public event EventHandler OnRecipeSuccess;//´«²Ë³É¹¦
-    public event EventHandler OnRecipeFailed;//´«²ËÊ§°Ü
+    //å£°æ˜äº‹ä»¶
+    public event EventHandler OnRecipeSpawned;//èœå“ç”Ÿæˆ
+    public event EventHandler OnRecipeComplate;//ä¼ èœå®Œæˆ
+    public event EventHandler OnRecipeSuccess;//ä¼ èœæˆåŠŸ
+    public event EventHandler OnRecipeFailed;//ä¼ èœå¤±è´¥
 
     public static DeliveryManager Instance { get; private set; }
 
-    [SerializeField] private RecipeSOList recipeListSO;//²Ëµ¥ÁĞ±í
+    [SerializeField] private RecipeSOList recipeListSO;//èœå•åˆ—è¡¨
 
-    private List<RecipeSO> waitingRecipeSOList;//µÈ´ıÖĞµÄ²Ëµ¥ÁĞ±í
+    private List<RecipeSO> waitingRecipeSOList;//ç­‰å¾…ä¸­çš„èœå•åˆ—è¡¨
     private float spawnRecipeTimer;
     private float spawnRecipeTimerMax = 4f;
     private int waitingRecipesMax = 4;
-    private int SuccessfulRecipesAmount;//³É¹¦Íê³ÉµÄ¶©µ¥ÊıÁ¿
+    private int SuccessfulRecipesAmount;//æˆåŠŸå®Œæˆçš„è®¢å•æ•°é‡
 
     private void Awake()
     {
@@ -32,7 +32,7 @@ public class DeliveryManager : MonoBehaviour
 
     private void Update()
     {
-        #region Éú³ÉµÈ´ı²Ëµ¥µÄÂß¼­
+        #region ç”Ÿæˆç­‰å¾…èœå•çš„é€»è¾‘
         if (KitchenGameManager.Instance.IsGamePlaying())
         {
             spawnRecipeTimer -= Time.deltaTime;
@@ -42,13 +42,13 @@ public class DeliveryManager : MonoBehaviour
 
                 if (waitingRecipeSOList.Count < waitingRecipesMax)
                 {
-                    //Ëæ»ú»ñÈ¡²ËÆ·
+                    //éšæœºè·å–èœå“
                     RecipeSO waitingRecipeSO = recipeListSO.recipeSOList[UnityEngine.Random.Range(0, recipeListSO.recipeSOList.Count)];
                     Debug.Log(waitingRecipeSO.recipeName);
-                    //Ìí¼ÓÖÁµÈ´ıÁĞ±í
+                    //æ·»åŠ è‡³ç­‰å¾…åˆ—è¡¨
                     waitingRecipeSOList.Add(waitingRecipeSO);
 
-                    //´¥·¢ÊÂ¼ş
+                    //è§¦å‘äº‹ä»¶
                     OnRecipeSpawned?.Invoke(this, EventArgs.Empty);
                 }
             }
@@ -65,13 +65,13 @@ public class DeliveryManager : MonoBehaviour
             RecipeSO waitingRecipeSO = waitingRecipeSOList[i];
 
             if (waitingRecipeSO.kitchenObjectSOList.Count == plateKitchenObject.GetKitchenObjectSOList().Count)
-            {//ÏÈ¶Ô±ÈÅä·½ÊıÄ¿
+            {//å…ˆå¯¹æ¯”é…æ–¹æ•°ç›®
                 bool plateContentsMatchesRecipe = true;
                 foreach (KitchenObjectSO recipeKitchenObjectSO in waitingRecipeSO.kitchenObjectSOList)
-                {//Ñ­»·²ËÆ×ÖĞµÄ²ËÆ·
+                {//å¾ªç¯èœè°±ä¸­çš„èœå“
                     bool ingredientFound = false;
                     foreach (KitchenObjectSO plateKitchenObjectSO in plateKitchenObject.GetKitchenObjectSOList())
-                    {//Ñ­»·²ÍÅÌÖĞµÄ²ËÆ·
+                    {//å¾ªç¯é¤ç›˜ä¸­çš„èœå“
                         if (plateKitchenObjectSO == recipeKitchenObjectSO)
                         {
                             ingredientFound = true; 
@@ -90,16 +90,16 @@ public class DeliveryManager : MonoBehaviour
                     Debug.Log("player delivered the correct recipe");
 
                     SuccessfulRecipesAmount++;
-                    waitingRecipeSOList.RemoveAt(i);//ÒÆ³ıµÈ´ı²ËÆ·
+                    waitingRecipeSOList.RemoveAt(i);//ç§»é™¤ç­‰å¾…èœå“
 
-                    //´¥·¢ÊÂ¼ş
+                    //è§¦å‘äº‹ä»¶
                     OnRecipeComplate?.Invoke(this, EventArgs.Empty);
                     OnRecipeSuccess?.Invoke(this, EventArgs.Empty);
                     return;
                 }
             }
         }
-        Debug.Log("player did not delivered the correct recipe");//Ã»ÓĞÆ¥ÅäµÄ²ËÆ·£¬³ö²ÍÊ§°Ü
+        Debug.Log("player did not delivered the correct recipe");//æ²¡æœ‰åŒ¹é…çš„èœå“ï¼Œå‡ºé¤å¤±è´¥
         OnRecipeFailed?.Invoke(this, EventArgs.Empty);
     }
 

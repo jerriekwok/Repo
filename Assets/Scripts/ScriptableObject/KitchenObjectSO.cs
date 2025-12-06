@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,3 +9,4 @@ public class KitchenObjectSO : ScriptableObject
     [field: SerializeField] public string objectName { get; private set; }
     [field: SerializeField] public Sprite sprite { get; private set; }
 }
+

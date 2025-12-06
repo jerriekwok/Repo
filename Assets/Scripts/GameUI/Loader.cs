@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -21,8 +21,9 @@ public static class Loader
         SceneManager.LoadScene(Scene.LoadingScene.ToString());
     }
 
-    public static void LoaderCallback()//»Øµ÷º¯Êý
+    public static void LoaderCallback()//å›žè°ƒå‡½æ•°
     {
         SceneManager.LoadScene(targetScene.ToString());
     }
 }
+

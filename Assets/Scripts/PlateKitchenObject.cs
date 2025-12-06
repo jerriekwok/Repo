@@ -1,11 +1,11 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
 
 public class PlateKitchenObject : KitchenObject
 {
-    //ÅÌ×ÓÖĞ²ËÆ·ÏÔÊ¾µÄÊÂ¼ş
+    //ç›˜å­ä¸­èœå“æ˜¾ç¤ºçš„äº‹ä»¶
     public event EventHandler<OnIngredientAddedEventArgs> OnIngredientAdded;
     public class OnIngredientAddedEventArgs : EventArgs
     {
@@ -13,7 +13,7 @@ public class PlateKitchenObject : KitchenObject
     }
 
 
-    [SerializeField] private List<KitchenObjectSO> validKitchenObjectSOList;//ºÏ·¨µÄkitchenObjectSOÁĞ±í
+    [SerializeField] private List<KitchenObjectSO> validKitchenObjectSOList;//åˆæ³•çš„kitchenObjectSOåˆ—è¡¨
     private List<KitchenObjectSO> kitchenObjectSOList;
 
     private void Awake()
@@ -21,17 +21,17 @@ public class PlateKitchenObject : KitchenObject
         kitchenObjectSOList = new List<KitchenObjectSO>();
     }
     
-    //ÔÚÅÌ×ÓÉÏÌí¼ÓÎïÆ·
+    //åœ¨ç›˜å­ä¸Šæ·»åŠ ç‰©å“
     public bool TryAddIngredient(KitchenObjectSO kitchenObjectSO)
     {
         if (!validKitchenObjectSOList.Contains(kitchenObjectSO))
         {
-            //ÊÇ·ñ´æÔÚºÏ·¨¿ÉÓÃµÄSO
+            //æ˜¯å¦å­˜åœ¨åˆæ³•å¯ç”¨çš„SO
             return false;
         }
         if (kitchenObjectSOList.Contains(kitchenObjectSO))
         {
-            //ÒÑ¾­´æÔÚ¸ÃÎïÆ·
+            //å·²ç»å­˜åœ¨è¯¥ç‰©å“
             return false;
         }
         else
@@ -52,3 +52,4 @@ public class PlateKitchenObject : KitchenObject
         return kitchenObjectSOList;
     }
 }
+

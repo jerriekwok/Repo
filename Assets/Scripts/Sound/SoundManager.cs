@@ -1,10 +1,10 @@
-using System;
+ï»¿using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// ÒôĞ§¹ÜÀíÆ÷
+/// éŸ³æ•ˆç®¡ç†å™¨
 /// </summary>
 public class SoundManager : MonoBehaviour
 {
@@ -13,13 +13,13 @@ public class SoundManager : MonoBehaviour
     [SerializeField] private AudioClipRefsSO audioClipRefsSO;
 
     private const string PLAYER_PREFS_SOUND_EFFECTS_VOLUME = "SoundEffectVolume";
-    public float volume = 1f;//µ±Ç°ÒôĞ§ÒôÁ¿
+    public float volume = 1f;//å½“å‰éŸ³æ•ˆéŸ³é‡
 
     private void Awake()
     {
         Instance = this;
 
-        //¶ÁÈ¡ÉÏ´Î±£´æµÄÒôÁ¿,Èç¹ûÃ»ÓĞÄ¬ÈÏÉèÖÃÎª1
+        //è¯»å–ä¸Šæ¬¡ä¿å­˜çš„éŸ³é‡,å¦‚æœæ²¡æœ‰é»˜è®¤è®¾ç½®ä¸º1
         volume = PlayerPrefs.GetFloat(PLAYER_PREFS_SOUND_EFFECTS_VOLUME, 1f);
     }
 
@@ -27,7 +27,7 @@ public class SoundManager : MonoBehaviour
     {
         DeliveryManager.Instance.OnRecipeSuccess += DeliveryManager_OnRecipeSuccess;
         DeliveryManager.Instance.OnRecipeFailed += DeliveryManager_OnRecipeFailed;
-        CuttingCounter.OnAnyCut += CuttingCounter_OnAnyCut;//¶©ÔÄÈ«¾ÖÊÂ¼ş
+        CuttingCounter.OnAnyCut += CuttingCounter_OnAnyCut;//è®¢é˜…å…¨å±€äº‹ä»¶
         Player.Instance.OnPickedSomething += Player_OnPickedSomething;
         BaseCounter.OnAnyObjectPlacedHere += BaseCounter_OnAnyObjectPlacedHere;
         TrashCounter.OnAnyObjectTrashed += TrashCounter_OnAnyObjectTrashed;
@@ -92,7 +92,7 @@ public class SoundManager : MonoBehaviour
     }
 
     /// <summary>
-    /// ÉèÖÃÒôĞ§ÒôÁ¿£¨¹©ÉèÖÃ²Ëµ¥µ÷ÓÃ£©
+    /// è®¾ç½®éŸ³æ•ˆéŸ³é‡ï¼ˆä¾›è®¾ç½®èœå•è°ƒç”¨ï¼‰
     /// </summary>
     public void SetVolume(float newVolume)
     {
@@ -106,3 +106,4 @@ public class SoundManager : MonoBehaviour
         return PlayerPrefs.GetFloat(PLAYER_PREFS_SOUND_EFFECTS_VOLUME, 1f);
     }
 }
+
